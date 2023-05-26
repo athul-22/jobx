@@ -1,10 +1,11 @@
-import React from 'react'
+import React  from 'react'
+import styled from 'styled-components'
 import logo from '../images/logo.svg'
 import main from '../images/main.svg'
 
-function Landing() {
+const Landing = () => {
     return (
-        <main>
+        <div>
             <nav>
                 <img src={logo} alt="logo" className='logo' />
             </nav>
@@ -20,8 +21,9 @@ function Landing() {
                 </div>
                 <img src={main} className='img main-img' alt='main'/>
             </div>
-        </main>
+        </div>
     )
 }
+
 
 export default Landing;
