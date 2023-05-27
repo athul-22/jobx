@@ -1,13 +1,13 @@
 import React  from 'react'
 import styled from 'styled-components'
-import logo from '../images/logo.svg'
 import main from '../images/main.svg'
+import Logo from '../components/Logo'
 
 const Landing = () => {
     return (
         <div>
             <nav>
-                <img src={logo} alt="logo" className='logo' />
+              <Logo/>
             </nav>
             <div className='container page'>
                 <div className='info'>
