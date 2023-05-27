@@ -25,5 +25,15 @@ const Landing = () => {
     )
 }
 
+// const Wrapper = styled.main`
+// nav{
+//     width:var(--fluid-width);
+//     width-max: var(--max-width);
+//     margin :0 auto;
+//     height: var(--nav-height);
+//     display: flex;
+//     align-items:center;
+// }`
+
 
 export default Landing;
