@@ -1,6 +1,7 @@
 import React  from 'react'
 import main from '../images/main.svg'
 import Logo from '../components/Logo'
+import { Link } from 'react-router-dom'
 
 const Landing = () => {
     return (
@@ -16,7 +17,7 @@ const Landing = () => {
                     <p>
                         Job tracking gives you access to accurate and timely performance data that allows you to understand if you have the right resources assigned to specific tasks.
                     </p>
-                    <button className='btn btn-hero'>Login / Register</button>
+                    <Link to="/register" className='btn btn-hero'>Login / Register</Link>
                 </div>
                 <img src={main} className='img main-img' alt='main'/>
             </div>
