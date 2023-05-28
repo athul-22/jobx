@@ -1,12 +1,13 @@
 import React from 'react'
 import Logo from '../components/Logo'
-import Wrapper from '../wrappers/RegisterPage'
+import '../styles/register.css'
 
 function Register() {
   return (
-    <Wrapper>
+    <div className='reg'>
+        <Logo/>
         <h1>ss</h1>
-    </Wrapper>
+    </div>
   )
 }
 
