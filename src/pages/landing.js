@@ -7,7 +7,7 @@ const Landing = () => {
     return (
         <div>
             <nav>
-              <Logo/>
+             <center> <Logo/></center>
             </nav>
             <div className='container page'>
                 <div className='info'>
