@@ -38,6 +38,26 @@ function Register() {
                 onChange={handleChange}
                 className='form-input'
                 />
+                 <label htmlFor='name' className='form-label'>
+                    Email: 
+                </label>
+                <input
+                type='text'
+                value={values.email}
+                name='name'
+                onChange={handleChange}
+                className='form-input'
+                />
+                 <label htmlFor='name' className='form-label'>
+                    Password: 
+                </label>
+                <input
+                type='password'
+                value={values.password}
+                name='name'
+                onChange={handleChange}
+                className='form-input'
+                />
                 <button className='btn btn-block'>SUBMIT</button>
             </div>
             </form>
