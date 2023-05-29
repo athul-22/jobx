@@ -29,8 +29,9 @@ function Register() {
         <Wrapper className="full-page" >
             <form className='form' onSubmit={onSubmit}>
            <center><Logo /></center> 
-           {values.showAlert && <Alert/>}
+          
             <h3>Login</h3>
+            {values.showAlert && <Alert/>}
             <FormRow type="text" name="name" value={values.name} handleChange={handleChange}/>
             <FormRow type="email" name="email" value={values.email} handleChange={handleChange}/>
             <FormRow type="password" name="password" value={values.password} handleChange={handleChange}/>
