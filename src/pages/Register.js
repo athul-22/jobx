@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Logo from '../components/Logo'
 import Wrapper from '../wrappers/RegisterPage'
 import FormRow from '../components/FormRow'
+import Alert from '../components/Alert'
 
 const initialState = {
     name: '',
     email: '',
     password: '',
     isMember: true,
+    showAlert: true,
 }
 
 function Register() {
@@ -27,6 +29,7 @@ function Register() {
         <Wrapper className="full-page" >
             <form className='form' onSubmit={onSubmit}>
            <center><Logo /></center> 
+           {values.showAlert && <Alert/>}
             <h3>Login</h3>
             <FormRow type="text" name="name" value={values.name} handleChange={handleChange}/>
             <FormRow type="email" name="email" value={values.email} handleChange={handleChange}/>
