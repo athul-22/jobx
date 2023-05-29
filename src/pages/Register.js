@@ -38,15 +38,19 @@ function Register() {
 
             {values.showAlert && <Alert/>}
 
-            <FormRow type="text" name="name" value={values.name} handleChange={handleChange}/>
+            {!values.isMember && (
+                <FormRow type="text" name="name" value={values.name} handleChange={handleChange}/>
+            )}
 
             <FormRow type="email" name="email" value={values.email} handleChange={handleChange}/>
 
             <FormRow type="password" name="password" value={values.password} handleChange={handleChange}/>
-            
+
             <button className='btn btn-block'>SUBMIT</button>
-            <p>
-                <button type='button' onClick={toggleMember} className='member-btn'>Register</button>
+            <p> {values.isMember ? "Don't have an account?" : "Already have an account?"}
+                <button type='button' onClick={toggleMember} className='member-btn'>
+                    {values.isMember ? 'Register' : 'Login'}
+                    </button>
             </p>
             </form>
         </Wrapper>
