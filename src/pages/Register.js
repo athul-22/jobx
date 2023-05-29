@@ -28,7 +28,10 @@ function Register() {
             <form className='form' onSubmit={onSubmit}>
            <center><Logo /></center> 
             <h3>Login</h3>
-            <FormRow/>
+            <FormRow type="text" name="name" value={values.name} handleChange={handleChange}/>
+            <FormRow type="email" name="email" value={values.email} handleChange={handleChange}/>
+            <FormRow type="password" name="password" value={values.password} handleChange={handleChange}/>
+            <button className='btn btn-block'>SUBMIT</button>
             </form>
         </Wrapper>
     )
