@@ -16,6 +16,10 @@ function Register() {
 
     const [values, setValues] = useState(initialState);
 
+    const toggleMember = () => {
+        setValues({...values,isMember:!values.isMember})
+    }
+
     const handleChange = (e) => {
         console.log(e.target)
     }
@@ -30,12 +34,20 @@ function Register() {
             <form className='form' onSubmit={onSubmit}>
            <center><Logo /></center> 
           
-            <h3>Login</h3>
+            <h3>{values.isMember ? 'Login' : 'Register'}</h3>
+
             {values.showAlert && <Alert/>}
+
             <FormRow type="text" name="name" value={values.name} handleChange={handleChange}/>
+
             <FormRow type="email" name="email" value={values.email} handleChange={handleChange}/>
+
             <FormRow type="password" name="password" value={values.password} handleChange={handleChange}/>
+            
             <button className='btn btn-block'>SUBMIT</button>
+            <p>
+                <button type='button' onClick={toggleMember} className='member-btn'>Register</button>
+            </p>
             </form>
         </Wrapper>
     )
