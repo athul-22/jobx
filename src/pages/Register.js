@@ -17,6 +17,11 @@ function Register() {
 
     const [values, setValues] = useState(initialState);
 
+    const [name ,setName] = useState();
+    const [email ,setEmail] = useState();
+    const [pass ,setPass] = useState();
+
+
     const { isLoading, showAlert , displayAlert } = useAppContext()
 
     const toggleMember = () => {
@@ -39,11 +44,10 @@ function Register() {
                 <h3>{values.isMember ? 'Login' : 'Register'}</h3>
                 {showAlert && <Alert />}
                 {!values.isMember && (
-                    <FormRow type="text" name="name" value={values.name} handleChange={handleChange} onChange={(e) => setValues(e.target.value)} />
+                    <FormRow type="text" name="name" value={name}  onChange={(e) => setName(e.target.value)} />
                 )}
-                <FormRow type="email" name="email" value={values.email} onChange={(e) => e.target.value} handleChange={handleChange} onChange={(e) => setValues(e.target.value)} />
-
-                <FormRow type="password" name="password" value={values.password} handleChange={handleChange} onChange={(e) => setValues(e.target.value)} />
+                <FormRow type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <FormRow type="password" name="password" value={pass}  onChange={(e) => setPass(e.target.value)} />
 
                 <button className='btn btn-block'>SUBMIT</button>
                 <p> {values.isMember ? "Don't have an account?" : "Already have an account?"}
