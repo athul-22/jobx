@@ -3,18 +3,21 @@ import Logo from '../components/Logo'
 import Wrapper from '../wrappers/RegisterPage'
 import FormRow from '../components/FormRow'
 import Alert from '../components/Alert'
+import { useAppContext } from '../context/appContext'
 
 const initialState = {
     name: '',
     email: '',
     password: '',
     isMember: true,
-    showAlert: true,
+    
 }
 
 function Register() {
 
     const [values, setValues] = useState(initialState);
+
+    const { isMember, showAlert } = useAppContext()
 
     const toggleMember = () => {
         setValues({ ...values, isMember: !values.isMember })
@@ -34,7 +37,7 @@ function Register() {
             <form className='form' onSubmit={onSubmit}>
                 <center><Logo /></center>
                 <h3>{values.isMember ? 'Login' : 'Register'}</h3>
-                {values.showAlert && <Alert />}
+                {showAlert && <Alert />}
                 {!values.isMember && (
                     <FormRow type="text" name="name" value={values.name} handleChange={handleChange} />
                 )}
