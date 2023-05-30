@@ -17,14 +17,14 @@ function Register() {
 
     const [values, setValues] = useState(initialState);
 
-    const { isMember, showAlert } = useAppContext()
+    const { isLoading, showAlert , displayAlert } = useAppContext()
 
     const toggleMember = () => {
         setValues({ ...values, isMember: !values.isMember })
     }
 
     const handleChange = (e) => {
-       setValues({...values,[e.target.name]: e.target.value})
+       setValues({...values, [e.target.name] : e.target.value})
     }
 
     const onSubmit = (e) => {
@@ -39,10 +39,12 @@ function Register() {
                 <h3>{values.isMember ? 'Login' : 'Register'}</h3>
                 {showAlert && <Alert />}
                 {!values.isMember && (
-                    <FormRow type="text" name="name" value={values.name} handleChange={handleChange} />
+                    <FormRow type="text" name="name" value={values.name} handleChange={handleChange} onChange={(e) => setValues(e.target.value)} />
                 )}
-                <FormRow type="email" name="email" value={values.email} onChange={(e) => e.target.value} handleChange={handleChange} />
-                <FormRow type="password" name="password" value={values.password} handleChange={handleChange} />
+                <FormRow type="email" name="email" value={values.email} onChange={(e) => e.target.value} handleChange={handleChange} onChange={(e) => setValues(e.target.value)} />
+
+                <FormRow type="password" name="password" value={values.password} handleChange={handleChange} onChange={(e) => setValues(e.target.value)} />
+
                 <button className='btn btn-block'>SUBMIT</button>
                 <p> {values.isMember ? "Don't have an account?" : "Already have an account?"}
                     <button type='button' onClick={toggleMember} className='member-btn'>
