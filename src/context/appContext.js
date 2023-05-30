@@ -1,20 +1,24 @@
-import React, { useState , useReducer , useContext } from "react";
+import React, { useState, useReducer, useContext } from "react";
 
 const initialState = {
-    isLoading:false,
-    showAlert:false,
-    alertText:'',
-    alertType:'',
+    isLoading: false,
+    showAlert: false,
+    alertText: '',
+    alertType: '',
 }
 
-const AppContext  = React.createContext();
+const AppContext = React.createContext();
 
-const AppProvider = ({children}) => {
-    const [state , setState ] = useState(initialState);
+const AppProvider = ({ children }) => {
+    const [state, setState] = useState(initialState);
 
     return (
-        <AppContext.Provider value={{...state}} >{children}</AppContext.Provider>
+        <AppContext.Provider value={{ ...state }} >{children}</AppContext.Provider>
     )
 }
 
-export {AppProvider , initialState}
+const useAppContext = () => {
+    return useContext(AppContext)
+}
+
+export { AppProvider, initialState , useAppContext }
