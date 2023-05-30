@@ -3,9 +3,7 @@ import { useAppContext } from '../context/appContext'
 
 function Alert(){
   const {alertType,alert} = useAppContext();
-  return (
-    <div className='alert alert-success'>Alert goes here</div>
-  )
+  return <div className={`alert alert-${alertType}`}>{Alert}</div>
 }
 
 export default Alert
